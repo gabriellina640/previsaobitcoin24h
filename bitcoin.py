@@ -50,9 +50,13 @@ class LinearRegression:
     def previsao(self, valor):
         return self.__intercept + (self.__inclination * valor)
 
-# --- CRIAR MODELO E PREVER PRÓXIMA HORA ---
+# CRIAR MODELO E PREVER PRÓXIMA HORA 
 lr = LinearRegression(x, y)
 previsao_hora_25 = lr.previsao(25)
 
-print("Preços por hora do último dia:", y)
-print(f"Previsão para a hora 25: R${previsao_hora_25:.2f}")
+# Formatar preços do último dia com 2 casas decimais
+precos_formatados = [f"{preco:.2f}" for preco in y]
+
+print(f"Preços por hora do último dia: {precos_formatados}")
+print(f"Previsão em uma hora: R${previsao_hora_25:.2f}")
+
